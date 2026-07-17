@@ -423,129 +423,234 @@ nav button:hover {
   padding-bottom: 0;
 }
 
+#contact-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: auto;
+  margin-right: auto;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
 #contact h1 {
   font-size: 40px;
   margin-bottom: 1%;
+  text-align: center;
 }
 
 #contact p {
   font-size: 10px;
-  width: 90%;
   margin-bottom: 5%;
+  text-align: center;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 #phone::before {
   content: "📞";
-}
-
-#phone {
+  justify-content: center;
   display: flex;
-  font-size: 15px;
-  align-items: center;
-  margin-bottom: 1%;
-}
-
-#phone a {
-  margin-left: 1%;
-  text-decoration: none;
-  color: bisque;
-  background: linear-gradient(135deg, black, rgb(140, 133, 83), black);
-  padding: 1%;
-  padding-bottom: 1px;
-  padding-top: 1px;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-#phone a:hover {
-  transform: translateX(5px) translateY(-3px);
-  background-color: bisque;
-  color: #fff;
+  margin-bottom: 4px;
+  font-size: 20px;
 }
 
 #address::before {
   content: "📍";
+  justify-content: center;
+  display: flex;
+  margin-bottom: 4px;
+  font-size: 20px;
 }
 
+#phone,
 #address {
-  display: flex;
   font-size: 15px;
   margin-bottom: 1%;
-}
-
-#address a {
-  margin-left: 1%;
-  text-decoration: none;
-  color: bisque;
-  background: linear-gradient(135deg, black, rgb(140, 133, 83), black);
-  padding: 1%;
-  padding-bottom: 1px;
-  padding-top: 1px;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-#address a:hover {
-  transform: translateX(5px) translateY(-3px);
+  width: 100%;
   background-color: bisque;
-  color: #fff;
+  box-shadow: 2px 4px 10px 2px;
+  padding: 2%;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#phone h3,
+#address h3 {
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+#address p {
+  font-size: 10px;
+}
+
+#phone a,
+#address a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 5px;
+  text-align: center;
+  border-radius: 25px;
+  background-color: w;
+  transition: 0.3s;
+  border: #333 solid 1px;
+}
+
+#address a::before,
+#phone a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #33333340, white);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 25px;
+  z-index: -1;
+}
+
+#phone a:hover::before,
+#address a:hover::before {
+  opacity: 1;
+}
+
+#phone a:hover,
+#address a:hover {
+  transform: translateX(2px) translateY(-3px);
+}
+
+#follow-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+#follow-us h3 {
+  font-size: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#follow-us::after {
+  content: "";
+  border: #333 solid 1px;
+  width: 30%;
+}
+
+#follow-us::before {
+  content: "";
+  border: #333 solid 1px;
+  width: 30%;
 }
 
 #social {
   display: flex;
   align-items: center;
-  width: 90%;
+  justify-content: center;
+  width: 100%;
   font-size: 14px;
 }
 
-#social div:not(:last-child)::after {
-  content: "●";
-  margin-left: 2px;
-  margin-right: 6px;
+.platforms-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-#social div {
-  display: flex;
-  align-items: center;
+.separator::after {
+  content: " | ";
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 #social img {
-  width: 20px;
-  margin-right: 2%;
+  width: 25px;
+  margin-bottom: 5px;
 }
 
-.social-a {
-  text-decoration: none;
-  color: bisque;
-  background-color: #333;
-  padding: 4px;
-  padding-left: 4px;
-  padding-bottom: 2px;
-  padding-top: 3px;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-.social-a:hover {
-  transform: translateY(-5px);
-  background-color: bisque;
-  color: #333;
-}
-
-#instagram {
-  background: linear-gradient(135deg, rgb(183, 0, 255), #ff9100);
-}
-
-#whatsapp {
-  background: linear-gradient(135deg, green, rgb(131, 202, 0));
-}
-
+#instagram,
+#whatsapp,
 #tiktok {
+  text-decoration: none;
+  color: #333;
+  padding: 4px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  border-radius: 25px;
+  transition: 0.5s;
+  border: #333 1px solid;
+}
+
+#instagram::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgb(183, 0, 255), #ff9100);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 25px;
+  z-index: -1;
+}
+
+#instagram:hover::before {
+  opacity: 1;
+}
+
+#instagram:hover {
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+#whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, green, rgb(131, 202, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 25px;
+  z-index: -1;
+}
+
+#whatsapp:hover::before {
+  opacity: 1;
+}
+
+#whatsapp:hover {
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+#tiktok::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background: linear-gradient(135deg, black, rgb(192, 112, 112));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 25px;
+  z-index: -1;
+}
+
+#tiktok:hover::before {
+  opacity: 1;
 }
 
 #tiktok:hover {
-  color: rgb(215, 213, 213);
+  transform: translateY(-3px);
+  color: #fff;
 }
 
 footer {
@@ -694,44 +799,37 @@ footer {
     margin-bottom: 2%;
   }
 
-  #phone {
-    font-size: 20px;
+  #contact-items {
+    width: 70%;
   }
 
-  #phone a {
-    padding: 6px;
-    padding-bottom: 2px;
-    padding-top: 2px;
+  #phone {
+    font-size: 20px;
   }
 
   #address {
     font-size: 20px;
   }
 
-  #address a {
-    padding: 6px;
-    padding-bottom: 2px;
-    padding-top: 2px;
+  #follow-us::after {
+    width: 40%;
+  }
+
+  #follow-us::before {
+    width: 40%;
   }
 
   #social {
     font-size: 20px;
   }
 
+  .separator::after {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
   #social img {
-    width: 25px;
-  }
-
-  #social div:not(:last-child)::after {
-    margin-left: 2px;
-    margin-right: 6px;
-  }
-
-  #social a {
-    padding: 6px;
-    padding-left: 6px;
-    padding-bottom: 2px;
-    padding-top: 2%;
+    width: 35px;
   }
 }
 
@@ -878,43 +976,36 @@ footer {
     margin-bottom: 2%;
   }
 
-  #phone {
-    font-size: 20px;
+  #contact-items {
+    width: 70%;
   }
 
-  #phone a {
-    padding: 6px;
-    padding-bottom: 2px;
-    padding-top: 2px;
+  #phone {
+    font-size: 20px;
   }
 
   #address {
     font-size: 20px;
   }
 
-  #address a {
-    padding: 6px;
-    padding-bottom: 2px;
-    padding-top: 2px;
+  #follow-us::after {
+    width: 40%;
+  }
+
+  #follow-us::before {
+    width: 40%;
   }
 
   #social {
     font-size: 20px;
   }
 
+  .separator::after {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
   #social img {
-    width: 25px;
-  }
-
-  #social div:not(:last-child)::after {
-    margin-left: 2px;
-    margin-right: 6px;
-  }
-
-  #social a {
-    padding: 6px;
-    padding-left: 6px;
-    padding-bottom: 2px;
-    padding-top: 2%;
+    width: 35px;
   }
 }
